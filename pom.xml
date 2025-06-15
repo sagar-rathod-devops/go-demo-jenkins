@@ -1,0 +1,26 @@
+<build>
+  <plugins>
+    <plugin>
+      <groupId>org.codehaus.mojo</groupId>
+      <artifactId>exec-maven-plugin</artifactId>
+      <version>3.1.0</version>
+      <executions>
+        <execution>
+          <id>run-go-app</id>
+          <phase>compile</phase> <!-- or use validate, install, etc. -->
+          <goals>
+            <goal>exec</goal>
+          </goals>
+          <configuration>
+            <executable>go</executable>
+            <workingDirectory>${project.basedir}/path/to/go/project</workingDirectory>
+            <arguments>
+              <argument>run</argument>
+              <argument>main.go</argument>
+            </arguments>
+          </configuration>
+        </execution>
+      </executions>
+    </plugin>
+  </plugins>
+</build>
